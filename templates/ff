@@ -1,13 +1,10 @@
 {% load static %}
-
 {% block metadescription %}
-    This is the cart page
+    This is cart page
 {% endblock %}
-
 {% block title %}
     CART-ABC pvt LTD
 {% endblock %}
-
 {% block content %}
     {% if not cart_items %}
         <div>
@@ -24,7 +21,7 @@
         </div>
     {% else %}
         <div>
-            <div class="text-center">
+            <div a class="text-center">
                 <br>
                 <h1 class="text-center my_title">
                     Your shopping cart
@@ -63,13 +60,13 @@
                                 {% if cart_item.quantity < cart_item.product.stock %}
                                     <td>
                                         <a href="{% url 'cart:add_cart' cart_item.product.id %}" class="custom_a"><i class="fa-solid fa-plus"></i></a>
-                                        &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %} " class="custom_a"><i class="fa-solid fa-minus"></i></a>
-                                        &nbsp;&nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa-solid fa-trash"></i></a>
+                                        &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %} " class="custom_a"><i class="fa-solid fa-minus custom_icon"></i></a>
+                                        &nbsp;&nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa-solid fa-trash custom_icon"></i></a>
                                     </td>
                                 {% else %}
                                     <td>
-                                        &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}"><i class="fa-solid fa-minus"</i></a>
-                                        &nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}"><i class="fa-solid fa-trash"</i></a>
+                                        &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fa-solid fa-minus custom_icon"></i></a>
+                                        &nbsp;<a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fa-solid fa-trash custom_icon"></i></a>
                                     </td>
                                 {% endif %}
                             </tr>
@@ -92,11 +89,6 @@
                                 Please review your cart items before proceeding with the order payment.
                             </td>
                         </tr>
-                    <tr>
-                        <td class="text-left">
-                            your Total is : <strong>{{total}}</strong>
-                        </td>
-                    </tr>
                     </tbody>
                 </table>
                 <div class="mx-auto">
