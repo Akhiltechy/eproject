@@ -80,11 +80,8 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
                 <table class="table my_custom_table">
                     <thead class="my_custom_thead">
-                    
                         <tr>
-
                             <th>
-
                                 Checkout
                             </th>
                         </tr>
@@ -109,9 +106,7 @@
 
                       <a class="btn btn-secondary" href="{% url 'shop:allProductCat' %}">CONTINUE SHOPING</a>
                 </div>
-
             </div>
         </div>
-
     {% endif %}
 {% endblock %}
